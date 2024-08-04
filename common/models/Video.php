@@ -17,7 +17,7 @@ use yii\helpers\FileHelper;
  * @property int|null $has_thumbnail
  * @property string|null $video_name
  * @property int|null $created_at
- * @property int|null $updated
+ * @property int|null $updated_at
  * @property int|null $created_by
  *
  * @property User $createdBy
@@ -46,7 +46,7 @@ class Video extends \yii\db\ActiveRecord
         return [
             [['video_id', 'tittle'], 'required'],
             [['description'], 'string'],
-            [['status', 'has_thumbnail', 'created_at', 'updated', 'created_by'], 'integer'],
+            [['status', 'has_thumbnail', 'created_at', 'updated_at', 'created_by'], 'integer'],
             [['video_id'], 'string', 'max' => 16],
             [['tittle', 'tags', 'video_name'], 'string', 'max' => 512],
             [['video_id'], 'unique'],
@@ -68,7 +68,7 @@ class Video extends \yii\db\ActiveRecord
             'has_thumbnail' => 'Has Thumbnail',
             'video_name' => 'Video Name',
             'created_at' => 'Created At',
-            'updated' => 'Updated',
+            'updated_at' => 'Updated At',
             'created_by' => 'Created By',
         ];
     }

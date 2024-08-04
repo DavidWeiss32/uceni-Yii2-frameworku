@@ -28,7 +28,7 @@ use yii\bootstrap4\ActiveForm;
 
     <?= $form->field($model, 'created_at')->textInput() ?>
 
-    <?= $form->field($model, 'updated')->textInput() ?>
+    <?= $form->field($model, 'updated_at')->textInput() ?>
 
     <?= $form->field($model, 'created_by')->textInput() ?>
 
