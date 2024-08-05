@@ -5,6 +5,8 @@ namespace common\models;
 use common\models\query\VideoQuery;
 use Imagine\Image\Box;
 use Yii;
+use yii\behaviors\BlameableBehavior;
+use yii\behaviors\TimestampBehavior;
 use yii\helpers\FileHelper;
 use yii\imagine\Image;
 
@@ -43,6 +45,18 @@ class Video extends \yii\db\ActiveRecord
     {
         return '{{%video}}';
     }
+
+   public function behaviors()
+   {
+       return [
+           TimestampBehavior::class,
+           [
+            'class'=>BlameableBehavior::class,
+           'updatedByAttribute'=>false,
+           ]
+       ];
+   }
+   // Created At, Updated At
 
     /**
      * {@inheritdoc}
