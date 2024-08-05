@@ -22,9 +22,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <p class="text-muted">Your videos will be private until you publish them.</p>
 
-        <?php \yii\bootstrap4\ActiveForm::begin([
+        <?php $form=\yii\bootstrap4\ActiveForm::begin([
                 'options'=>['enctype'=>'multipart/form-data']
         ]) ?>
+        <?php echo $form->errorSummary($model) ?>
 
         <button class="btn btn-primary btn-file">
             Select File
