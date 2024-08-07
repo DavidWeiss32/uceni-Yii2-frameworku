@@ -1,9 +1,18 @@
 <?php
+/** @var $this \yii\web\View */
 /** @var $channel \common\models\User */
+
+use yii\helpers\Url;
+use yii\widgets\Pjax;
+
 ?>
 
 <div class="jumbotron">
     <h1 class="display-4"><?php echo $channel->username ?></h1>
     <hr class="my-4">
-    <a class="btn btn-danger" href="#" role="button">Subscribe</a> 9
+    <?php Pjax::begin() ?>
+        <?php echo $this->render('_subscribe',[
+                'channel'=>$channel
+        ]) ?>
+    <?php Pjax::end() ?>
 </div>
