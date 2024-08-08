@@ -27,9 +27,7 @@ use yii\helpers\Url;
             </div>
             <div>
 
-                <?php echo Html::a($model->createdBy->username,[
-                '/channel/view','username' => $model->createdBy->username
-                ]) ?>
+                <?php echo common\helpers\Html::channelLink($model->createdBy) ?>
 
             </div>
             <div class="mt-3">
